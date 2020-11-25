@@ -1,0 +1,169 @@
+# Printing famous Hello world string
+print("Hello World")
+
+# Variable, Data Type and Mathematical Operation
+# We can put our different types of data into variable
+# Here 'text_to_print' is a variable and i store "Hello world" in it.
+
+text_to_print = "Hello World"
+print(text_to_print)
+
+# The programme of adding two numbers. We will use two variable 'number1' and
+# 'number2' to store numbers. Then we will use another variable 'result' to 
+# store their sum.
+
+number1 = 10
+number2 = 5
+result = number1 + number2
+print(result)
+
+# we can store something else in the samne variable. We can store different
+# types of data into same variable but programme will remember only last 
+# assigned data.
+
+number1 = 10
+print(number1)
+
+number1 = 15
+number1 = 18
+print(number1)
+
+number1 = "hello"
+print(number1)
+
+# Every data is specific type. Like 10 is an integer type data.
+# "Hello" is a string type data. We can see data type by 'type' function.
+
+# Integer type data. A whole number; a number that is not a fraction.
+v = 10
+print(type(v))
+
+# String type data where can be one or more letter, numbers and sign.
+# We have to use single quotation or double qoutation to make string.
+# Emty string is possible.
+v = "10"
+type(v)
+
+s = "100"
+print(s)
+
+s = "abcd1234-09232<>?323"
+print(s)
+
+s = 'abc 123'
+print(s)
+
+s = ''
+print(s)
+
+s = ""
+print(s)
+
+# Float type data. Float values are specified with a decimal point. Float is
+# used to represent real numbers and is written with a decimal point dividing
+# the integer and fractional parts.
+v = 10.0
+type(v)
+
+# When we do mathematical operation between two numbers, they have to be
+# same data type. Otherwise python will try to convert them as same data type.
+# If we add a integer and float variable then sum will be float data type.
+# But python can not add integer with string.
+
+a = 1
+b = 2.5
+c = a + b
+print(c)
+
+a = 1
+b = "2.5"
+c = a + b # can't add. Because string and integer can't be add.
+
+5/2       # Divided
+5-2       # Subtract
+5*2       # Multiplication
+5//2      # Only integer part of quotient
+5%2       # Modulus or Remainder
+5**2      # Squre
+
+# print() function is a built in function. It prints the specified massage to
+# the screen. print function can take more than one argument.
+
+a = 1
+b = 1.2
+c = "hello"
+print(a, b, c)
+print(a, b, c, "world")
+
+# If we want to take input from user, then python has input() function for that.
+name = input("What is your name? ")
+print("Welcome to python,", name, "!")
+
+# Arithmetic programme with input() function
+number1 = input("Please type an integer and press enter: ")
+number2 = input("Please type another integer and press enter: ")
+print("number1 + number2 =", number1 + number2)
+
+# input() fuction always return string. That's why we have to convert them
+# to integer with int() function
+
+number1 = input("Please type an integer and press enter: ")
+number2 = input("Please type another integer and press enter: ")
+print("number1 + number2 =", int(number1) + int(number2))
+
+# All type of arrithmetic operation programme
+number1 = int(input("Type an integer and press enter: "))
+number2 = int(input("Type another integer and press enter: "))
+ques = input("What do you want to do: +, -, *, /, //, %, **: ")
+if ques == "+":
+    print("number1 + number2 = ", number1 + number2)
+elif ques == "-":
+    print("number1 - number2 = ", number1 - number2)
+elif ques == "*":
+    print("number1 * number2 = ", number1 * number2)
+elif ques == "/":
+    print("number1 / number2 = ", number1 / number2)
+elif ques == "//":
+    print("number1 // number2 = ", number1 // number2)
+elif ques == "%":
+    print("number1 % number2 = ", number1 % number2)
+elif ques == "**":
+    print("number1 ** number2 = ", number1 ** number2)
+else:
+    print("Please type any sign of arrithmetic operation.")
+
+# Conditional Logic
+2 == 3
+3 == 3
+2 > 3
+2 < 3
+2 != 3
+3 != 3
+2 >= 3
+2 <= 3
+
+# Two strings are equal or not
+"Bangladesh" == "Bangladesh"
+"Bangladesh" == "bangladesh"
+
+# List. When we want to put multi data togather, we can use list.
+# List starts and ends up with [] squre bracket. Every elements in the list
+# splits with coma.
+
+number_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(number_list)
+
+# We can get list's element individually. Type serial number into squre bracket.
+# In programming serial number called index. Index starts with 0 in python.
+# If we have 10 elements in the list then index will be 0 to 9
+
+number_list[0]
+number_list[1]
+number_list[9]
+
+# How many elements we have in the list? We an know that with len() function.
+saarc = ["Bangladesh", "Afghanistan", "Bhutan", "Nepal",
+         "India", "Pakistan", "Sri Lanka"]
+saarc[0]
+
+print("Number of countries in SAARC:", len(saarc))
