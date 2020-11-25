@@ -167,3 +167,204 @@ saarc = ["Bangladesh", "Afghanistan", "Bhutan", "Nepal",
 saarc[0]
 
 print("Number of countries in SAARC:", len(saarc))
+
+# Checking the member of SAARC. It is easy to verify whether an element is on
+# the list or not.
+
+"Bangladesh" in saarc
+"China" in saarc
+"China" not in saarc
+"India" not in saarc
+
+# if statement. If the condition of 'if' block is true then the job will be done.
+
+saarc = ["Bangladesh", "Nepal", "Bhutan", "India",
+         "Afghanistan", "Pakistan", "Sri Lanka"]
+
+country = input("Enter the name of the country: ")
+
+if country in saarc:
+    print(country, "is a member of SAARC.")
+
+print("Program terminated.")
+
+# Use of else statement. If the condition of 'if' block is false then the
+# program will do 'else' block job.
+
+saarc = ["Bangladesh", "Nepal", "Bhutan", "India",
+         "Afghanistan", "Pakistan", "Sri Lanka"]
+
+country = input("Enter the name of the country: ")
+
+if country in saarc:
+    print(country, "is a member of SAARC.")
+else:
+    print(country, "is not a member of SAARC")
+    
+print("Program terminated.")
+
+# Grade calculator program. When we need to check continously various types
+# of condition, we will use 'elif' statement after 'if' statement.
+# When one condition will true then other condition won't be checked.
+
+marks = input("Please enter your marks: ")
+marks = int(marks)   # input function returns string. use int function convert to integr.
+
+if marks >= 80:
+    grade = "A+"
+elif marks >= 70:
+    grade = "A"
+elif marks >= 60:
+    grade = "A-"
+elif marks >= 50:
+    grade = "B"
+else:
+    grade = "F"
+    
+print("Your grade is: ", grade)
+
+# Take a number form user and find out whether this number is positive or negative.
+
+number = int(input("Type a number: "))
+
+if number >= 0:
+    print(number, "is positive")
+else:
+    print(number, "is negative")
+    
+# Find out whether a number is even or odd.
+
+number = int(input("Type a number: "))
+
+if number % 2 == 0:
+    print(number, "is a even number.")
+else:
+    print(number, "is a odd number.")
+
+# Leap Year. If there is a leap year, february will be 29 days in that year
+# and if not, it will be 28 days. If any year is divisible by 4, it is a
+# leap year but there is an exception. If that year is divisible by 100,
+# then it must also be divisible by 400.
+
+year = 112
+
+if year % 4 != 0:
+    print("No.")
+else:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("Yes")
+        else:
+            print("No")
+    else:
+        print("yes.")
+
+# Another way to find leap year
+
+year = 2020
+
+if year % 400 == 0:
+    print("Yes")
+elif year % 100 == 0:
+    print("No")
+elif year % 4 == 0:
+    print("Yes.")
+else:
+    print("N0.")
+
+# Another way to find leap year
+
+year = 2024
+
+if year % 100 != 0 and year % 4 == 0:
+    print("Yes.")
+elif year % 100 == 0 and year % 400 == 0:
+    print("Yes")
+else:
+    print("No")
+
+# Year as a input.
+
+year = int(input("Type a year: "))
+
+if year % 4 != 0:
+    print(year, "is not a leap year.")
+else:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print(year, "is a leap year and it is divisible by 100, 400 and 4")
+        else:
+            print(year, "is not a leap year. Divisible by 4 and 100")
+    else:
+        print(year, "is a leap year and it is divisible by only 4")
+
+
+
+
+year = int(input("Type a year: "))
+
+if year % 400 == 0:
+    print(year, "is a leap year and it is divisible by 100, 400, and 4")
+elif year % 100 == 0:
+    print(year, "is not a leap year. Divisible by 4 and 100")
+elif year % 4 == 0:
+    print(year, "is a leap year and it is divisible by only 4")
+else:
+    print(year, "is not a leap year")
+
+
+
+year = int(input("Type a year: "))
+
+if year % 100 != 0 and year % 4 == 0:
+    print(year, "is a leap year. Divisible by only 4")
+elif year % 100 == 0 and year % 400 == 0:
+    print(year, "is a leap year. Divisible by 100, 400 ,4")
+else:
+    print(year, "is not a leap year.")
+
+    
+# Turtle. Turtle is a module in python. Before use any module we have to
+# import that module first. we can import that module as any name or import
+# as default name
+
+import turtle as t
+t.forward(100)        # We told turtle go ahead 100 pixel.
+t.exitonclick()
+
+import turtle
+turtle.forward(100)   # We told turtle go ahead 100 pixel.
+turtle.exitonclick()
+
+# Making square by turtle
+
+import turtle
+
+turtle.shape("turtle")   # making turtle shape. type- ?turtle.shape for details.
+turtle.speed(10)         # Increasing turtle speed by speed function.
+# see ?turtle.speed for details
+
+turtle.forward(100)
+turtle.left(90)
+turtle.forward(100)
+turtle.left(90)
+turtle.forward(100)
+turtle.left(90)
+turtle.forward(100)
+
+turtle.exitonclick()
+
+# Making equilateral triangle. An equilateral triangle is a triangle in
+# which all three sides have the same length. All three internal angles
+# are each 60 degrees.
+
+import turtle
+
+turtle.forward(200)
+turtle.left(120)
+turtle.forward(200)
+turtle.left(120)
+turtle.forward(200)
+turtle.left(120)
+
+turtle.exitonclick()
