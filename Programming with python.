@@ -368,3 +368,103 @@ turtle.forward(200)
 turtle.left(120)
 
 turtle.exitonclick()
+
+# Loop - There is an option called loop in programming to do the same
+# thing over and over again. If we want to show ten times on the screen
+# "I want to be a programmer."
+
+for i in range(10):
+    print("I want to be a programmer.")
+
+# The reason of using i variable is that the value of i variable will
+# increase one by one from 0 and its maximum value will be n-1.
+
+for i in range(5):
+    print(i)
+
+# Making squre by for loop
+
+import turtle
+
+turtle.shape("turtle")
+turtle.speed(1)
+
+for squre in range(4):
+    turtle.forward(100)
+    turtle.left(90)
+    
+turtle.exitonclick()
+
+# Now we will write a program that will add 1 fifty times.
+# we can change the variable name.
+
+result = 0
+for number in range(50):
+    result = result + 1
+print(result)
+
+# Add each integer from 1 to 50 and add each summation to the next integer.
+
+result = 0
+num = 1
+for i in range(50):
+    result = result + num
+    num = num + 1
+    print(result)
+    
+result = 0
+for num in range(51):
+    result = result + num
+    print(result)
+
+# range(start, stop, step)
+
+for i in range(1, 20, 5):
+    print(i)
+
+result = 0
+for num in range(1, 51):
+    result += num
+    print(result)
+
+# My thoughts
+
+result = 1
+num = 2
+for i in range(50):
+    result = result + num
+    num = num + 1
+    print(result)
+
+range(5, 10)
+
+# Numbers from 1 to 100 are divisible by 5 and print their summation.
+
+result = 0
+for i in range(1, 101):
+    if i % 5 == 0:
+        result += i
+        print(i)
+print("Summation is: ", result)
+
+# Another way to do the same task
+
+result = 0
+for num in range(5, 101, 5):
+    print(num)
+    result += num
+print("Summation is: ", result)
+
+# Now we will draw a dash line using loop by turtle.
+# There will be use penup() and pendown() functions.
+
+import turtle
+turtle.speed(3)
+
+for i in range(20):
+    turtle.forward(10)
+    turtle.penup()
+    turtle.forward(3)
+    turtle.pendown()
+    
+turtle.exitonclick()  
