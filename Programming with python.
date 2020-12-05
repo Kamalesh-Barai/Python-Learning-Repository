@@ -467,4 +467,126 @@ for i in range(20):
     turtle.forward(3)
     turtle.pendown()
     
-turtle.exitonclick()  
+turtle.exitonclick() 
+
+# Nested Loop.
+# Make 5 square with nested loop. Each squre will be bigger than another one.
+
+import turtle
+turtle.shape("turtle")
+
+for side_length in range(50, 200, 30):
+    for i in range(4):
+        turtle.forward(side_length)
+        turtle.left(90)
+
+turtle.exitonclick()
+
+# My example - Making Square - Nested Loop
+
+turtle.speed(0)
+for side_length in range(60, 200, 20):
+    turtle.left(90)
+    turtle.forward(side_length)
+    for i in range(4):
+        turtle.left(90)
+        turtle.forward(side_length + 10)
+    turtle.penup()
+    turtle.forward(10)
+    turtle.pendown()
+    
+turtle.exitonclick()
+
+# Big space between squares
+
+turtle.speed(0)
+for side_length in range(50, 300, 60):
+    turtle.left(90)
+    turtle.forward(side_length)
+    for i in range(4):
+        turtle.left(90)
+        turtle.forward(side_length + 30)
+    turtle.penup()
+    turtle.forward(30)
+    turtle.pendown()
+        
+turtle.exitonclick()
+
+# If we have any list, we can apply loop on the list.
+
+saarc = ["Bangladesh", "Pakistan", "Afghanistan",
+         "India", "Sri Lanka", "Bhutan", "Nepal"]
+
+for country in saarc:
+    print(country, "is a member of SAARC.")
+
+# There is another funny thing, we can make list by range.
+# I have to use list() function in there. If we want to make a list of
+# all of the numbers from 0 to 10.
+
+li = list(range(11))
+print(li)
+
+# If we want to make a list of all of the even numbers from 1 to 20.
+
+li_even = list(range(2, 21, 2))
+print(li_even)
+
+# While loop - First i have to write "while", then i have to write a
+# condition, if that condition is true then the task inside the loop will
+# be done once, then that condition will be check again.
+
+# Example 1
+i = 0
+while i < 5:
+    print(i)
+    i += 1
+
+# Example 2
+i = 5
+while i >= 0:
+    i -= 1
+    print(i)
+
+# Now we will write a program for multiplication table using while loop.
+
+n = int(input("Please enter a positive integer: "))
+m = 1
+
+while m <= 10:
+    print(n, "X", m, "=", n*m)
+    m += 1
+
+# Draw a wheel with 36 axis.
+
+import turtle
+
+turtle.color("red")
+turtle.speed(2)
+
+counter = 0
+while counter < 36:
+    for i in range(4):
+        turtle.forward(100)
+        turtle.right(90)
+    turtle.right(10)
+    counter += 1
+turtle.exitonclick()
+
+# Another example - Using of dot() function
+
+import turtle
+
+height = 5
+width = 5
+
+turtle.penup()
+for y in range(height):
+    for x in range(width):
+        turtle.dot()
+        turtle.forward(20)
+    turtle.backward(20 * width)
+    turtle.right(90)
+    turtle.forward(20)
+    turtle.left(90)
+turtle.exitonclick()
