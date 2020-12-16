@@ -409,13 +409,549 @@ txt = "apple#banna#cherry#orange"
 spliting = txt.split("#", 1)
 spliting
 
-# count() method returns the number of elements with the specified value.
+# count() method returns the number of element.
 
 string = "This is"
 string.count("is")
 
 fruits = ["apple", "bannana", "cherry"]
 fruits.count("cherry")
+
+# startswith() method and endswith() method. 
+# The startswith() method checks wheather the string starts with a specific
+# string. The endsswith() method checks wheather the string ends with a
+# specific string.
+
+string = "Bangladesh"
+string.startswith("Ban")
+string.startswith("ban")
+string.startswith("an")
+
+string.endswith("desh")
+string.endswith("h")
+string.endswith(("Ban"))
+
+string = "This is string example"
+string.startswith("is")
+string.startswith("is", 5)
+string.startswith("is", 5, 6)
+string.endswith("string", -14, -8)
+string[-14:-8]
+
+# If someone's name starts with Mr, we will address his as Dear Sir.
+
+name = "Mr. Anderson"
+if name.startswith("Mr."):
+    print("Dear Sir")
+
+# In the above program we can use textbox for input.
+
+import turtle
+name = turtle.textinput("Name", "What is your name?")
+name = name.lower()
+
+if name.startswith("mr"):
+    print("Hello Sir, how are you?")
+elif name.startswith("mrs") or name.startswith("ms") or name.startswith("mrs"):
+    print("Hello Madam, how are you?")
+else:
+    name = name.capitalize()
+    print("Hello", name, "! How are you?")
+turtle.exitonclick()
+
+# A program that find the numbers of letter in a string. 
+
+string = "a quick brown fox jumps over the lazy dog" # That string contains all letters
+for c in "abcdefghijklmnopqrstuvwxyz":
+    print(c, string.count(c))
+
+# Write a program that will take string as a input and will return 4 strings
+# from that string. First string will have only capital latters. Second string
+# will have only small letters. Third string will have only numbers and 
+# everything else will have in the fourth string.
+
+def split_string(string):
+    cap = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    sma = "abcdefghijklmnopqrstuvwxyz"
+    sign = "<>?'|}{+_)(*&^%$#@!\",./;:\][=-"
+    num = "0123456789"
+    
+    up_ch = ""
+    sm_ch = ""
+    nu_ch = ""
+    si_ch = ""
+    
+    for letters in string:
+        if letters in cap:
+            up_ch += letters
+        if letters in sma:
+            sm_ch += letters
+        if letters in num:
+            nu_ch += letters
+        if letters in sign:
+            si_ch += letters
+    
+    print("Up_case: ", up_ch, "\nSmall_case: ", sm_ch,
+          "\nNumbers: ", nu_ch, "\nSign: ", si_ch)
+
+string = "Hello Test! 123 123, good."
+split_string(string)
+
+# Change the position of letters.
+
+string = "Ban"
+
+string[1]
+string[0]   
+string[3]   
+string[2]  
+string[5]
+string[4]
+string[7]
+
+# By for loop. and return only even letters
+index1 = 1
+index2 = 0
+add = ""
+for i in range(len(string) // 2):
+    add += string[index1] + string[index2]
+    index1 += 2
+    index2 += 2
+print(add)
+
+# By for loop. Return even and odd both letters
+index1 = 1
+index2 = 0
+add = ""
+for i in range(len(string) // 2):
+    add += string[index1] + string[index2]
+    index1 += 2
+    index2 += 2
+    if index1 == len(string):
+        add += string[index2]
+print(add)
+
+# By while loop. Return even and both letters
+string = "Fruit"
+index1 = 1
+index2 = 0
+add = ""
+if len(string) == 1:
+    print("Oops! Please type a word more than one letters.")
+else:
+    while index1 < len(string):
+        add += string[index1] + string[index2]
+        index1 += 2
+        index2 += 2
+        if index1 == len(string):
+            add += string[index2]
+    print(add)
+
+def interchange_letters(string):
+    index1 = 1
+    index2 = 0
+    add = ""
+    if len(string) == 1:
+        print("Oops! Please type a word more than one letters.")
+    else:
+        for i in range(len(string) // 2):
+            add += string[index1] + string[index2]
+            index1 += 2
+            index2 += 2
+            if index1 == len(string):
+                add += string[index2]
+        print(add)
+
+string = "Bangladesh"
+interchange_letters(string)
+
+# Write a program whether a word is palindrome or not.
+
+string = "Bangladesh"
+add = ""
+index = -1
+
+for letter in string:
+    add += string[index]
+    index -= 1
+if add == string:
+    print("Wow!", string, "is a palindrome word.")
+else:
+    print("Oops!", string, "is not a palindrome word. Inverse word is: ", add)
+
+# Another Way
+string = "Bangladesh"
+string[::-1]         # [start:end:step]
+string[0:7]
+string[0:7:2]
+
+if string == string[::-1]:
+    print("Inverse word is: ", string[::-1], ". And its a palindrome word")
+else:
+    print("Inverse word is: ", string[::-1], ". And its not a palindrome word")
+
+# Data Structure in Python
+# List, Tuple, Set, Dictionary
+# To add new elements in the last of list we can use append() method.
+# List is mutable. The element of list changable.
+
+saarc = ["Bangladesh", "India", "Sri Lanka", "Pakistan",
+         "Nepal", "Bhutan"]
+print(saarc)
+saarc.append("Afganistan")
+print(saarc)
+
+# If we want to sort the elemennts of the list in a certain order. We can 
+# use sort() method.
+
+saarc = ["Bangladesh", "India", "Sri Lanka", "Pakistan",
+         "Nepal", "Bhutan"]
+saarc.sort()
+print(saarc)
+
+li = [1, 3, 7, 2, 4, 6, 1]
+print(li)
+li.sort()
+print(li)
+
+# If we want to sort the elements of the list in reverse order, we can use
+# reverse() method.
+
+li = [1, 2, 3, 4]
+li.reverse()
+print(li)
+
+li = ["mango", "banana", "orange"]
+print(li)
+li.reverse()
+print(li)
+
+# If we want to add elements anywhere in the list, we can use insert() method.
+# insert() method takes two arguments - insert(index, item).
+
+fruits = ["mango", "banana", "orange"]
+print(fruits)
+fruits.insert(0, "apple")
+print(fruits)
+fruits.insert(2, "coconut")
+print(fruits)
+
+# If we want to exclude any elments of list, we can use remove() method.
+
+print(fruits)
+fruits.remove("coconut")
+print(fruits)
+
+item = "coconut"
+if item in fruits:
+    fruits.remove(item)
+    print(fruits)
+else:
+    print(item, "not in fruits")
+
+# Now we will see the use of pop() method. Pop() method retuns the last
+# elements of list and exclude that elements.
+
+fruits = ["apple", "orange", "coconut", "banana"]
+item = fruits.pop()
+print(item)
+print(fruits)
+
+item = fruits.pop(2)  # return the specific elements
+print(item)
+print(fruits)
+
+# If we want add a new list to the last of another list, we can use
+# extend() method.
+
+li = [1, 2, 3]
+li2 = [3, 4, 5, 6]
+li.extend(li2)
+li
+
+# If we want to know how many times is an element in a list, we can use
+# count() method.
+
+li = [1, 2, 3, 3, 4, 5, 6]
+li.count(3)
+li.count(5)
+li.count(10)
+
+# If we want to delete any elements from list or delete the whole list, we
+# can use del() function
+
+li = [1, 2, 3, 3, 4, 5, 6]
+del(li[1])
+li
+del(li[0])
+li
+del(li)
+li
+
+# If we want to make a empty list.
+
+li = []    # empty list
+for i in range(10):
+    li.append(i)
+li
+
+# Arithmetic operation can be done in the list
+
+li = [1, 2, 3]
+li2 = [4, 5, 6]
+li = li + li2
+print(li)
+
+li1 = [1, 2, 3]
+li2 = li1 * 3
+print(li2)
+
+# If there are many string in the list, then we can make a one string by
+# adding them. And we can specify how we add them.
+
+li = ["a", "b", "c"]
+print(li)
+string = "".join(li)
+print(string)
+
+string = ",".join(li)
+print(string)
+
+string = "-".join(li)
+print(string)
+
+# List comprehensions - List conprehension offers a shorter syntax when you
+# want to create a new list based on the value of an existing list.
+# I have a list that contains some nubers. Now i want to make a another list
+# where every elements will be the double from the previous list.
+
+# Without list comprehension
+li = [1, 2, 3, 4]
+new_li = []
+for x in li:
+    new_li.append(x * 2)
+new_li
+
+# With list comprehension
+li = [1, 2, 3, 4]
+new_li = [2 * x for x in li]
+
+# Based on a list of fruits, you want a new list, containing only the fruits
+# with the letter "a" in the name.
+
+# Without list comprehension
+fruits = ["apple", "cherry", "kiwi", "orange", "mango"]
+new_fruits = []
+for x in fruits:
+    if "a" in x:
+        new_fruits.append(x)
+new_fruits
+
+# With list comprehension
+fruits = ["apple", "cherry", "kiwi", "orange", "mango"]
+n_fruits = [x for x in fruits if "a" in x]
+
+# Making even number list with list comprehension
+num_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_list = [x for x in num_list if x % 2 == 0]
+
+# Making a list with list comprehension where every elements is square of
+# another list's element
+
+num_list = [1, 2, 3, 4, 5, 6]
+square_list = [x * x for x in num_list]
+
+# Tuple - Tuple is a data structure of python. Tuples are written 
+# with parenthesis.
+
+x = (1, 2, 3)
+type(x)
+
+x = 1, 2, 3   # That means tuples are written without parenthesis too.
+type(x)
+
+# Make tuple with one element
+x = 1
+type(x)
+x = 1,
+type(x)
+t = ()     # empty tuple
+type(t)
+
+# indexing of tuple
+tpl = (1, 2, 3)
+tpl[0]
+tpl[1]
+tpl[2]
+tpl[3]
+
+# Tuple is not mutable. The elements of tuple is unchangeable.
+tpl = (1, 2, 3, 4)
+tpl[0] = 5
+
+# We can pack togather more than one variable into tuple. We can unpack a tuple
+# and the elements of tuple can be store different variable.
+
+numbers = (10, 20, 30, 40)
+n1, n2, n3, n4 = numbers
+n1
+n2
+n3
+n4
+
+t = n3, n4
+t
+type(t)
+
+# We can store different types of data in a tuple and we can apply loop on it.
+
+items = (1, 2, 5.5, ["a", "b", "c"], ("apple", "mango"), "Book", "pen")
+for item in items:
+    print(item, type(item))
+
+items[3]
+items[3][0]
+items[4][1]
+items[4]
+
+# We can create list easily with tuple elements.
+tpl = (1, 2, 3)
+li = list(tpl)
+li
+
+# Set - Set is a collection of items. Sets are written with curly braces.
+# Sets can't have two items with the same value. Set items are unordered,
+# unchangeable.
+
+A = set()   # Empty set
+type(A)
+items = {"pen", "laptop", "cellphone"}
+items
+type(items)
+
+# Duplicate values will be ignored.
+thisset = {"apple", "banana", "cherry", "apple"}
+print(thisset)
+
+# We can create set from list or tuple
+li = [1, 2, 3, 4]
+tpl = (5, 6, 7, 8)
+
+A = set(li)
+print(A)
+B = set(tpl)
+print(B)
+type(A)
+type(B)
+
+# We can create set from string. In that case each letter of the string
+# will be an element of the set.
+
+A = set("Bangladesh")    # Sets are unorderd.
+print(A)
+type(A)
+
+B = set("Sri Lanka")
+print(B)
+type(B)
+
+# This is how we can find out if something is a member of a set.
+
+A = {1, 2, 3}
+1 in A
+2 in A
+5 in A
+
+# If we have two sets, we can apply different operation on those sets.
+# Common elements of two sets. That's called intersection.
+A = {1, 2, 3, 4, 5}
+B = {2, 4, 6, 8}
+C = A & B      # Intersection
+print(C)
+
+# Union - If we want to do union,  namely, the member of any one set A or B
+# (Those members can be in both sets.)
+
+A = {1, 2, 3, 4, 5}
+B = {2, 4, 6, 8}
+C = A | B       # Union
+print(C)
+
+# The elements are in any one set but not in both sets at the same time.
+
+A = {1, 2, 3, 4, 5}
+B = {2, 4, 6, 8}
+C = A ^ B
+print(C)
+
+# Difference - In A but not in B
+
+A = {1, 2, 3, 4, 5}
+B = {2, 4, 6, 8}
+C = A - B
+print(C)
+
+# Not element of - B is not in A
+
+A = {1, 2, 3, 4, 5}
+B = {2, 4, 6, 8}
+C = B - A
+print(C)
+
+# Dictionry - Dictionaries are used to store data values in key:value pairs.
+# A dictionary is a collection which is unordered, changeable, and does not
+# allow duplicates. Dictionaries are written with curly braces, and have
+# keys and values.
+
+# create and print a dictionary
+thisdict = {"brand" : "ford", "model" : "musting", "year" : "1964"}
+print(thisdict)
+
+# Dictionary items are presented in key:value pairs, and can be reffered to by
+# using the key name.
+# Print the brand value of the dictionary.
+
+thisdict = {"brand" : "ford", "model" : "musting", "year" : "1964"}
+print(thisdict["brand"])
+
+# Dictionaries cannot have two items with the same value. Duplicate values 
+# will overwrite existing values:
+
+thisdict = {"brand" : "ford", "year" : "2020", "model" : "musting", "year" : "1964"}
+print(thisdict)
+
+# To determine how many items a dictionary has, use len() function:
+print(len(thisdict))
+
+# The values in dictionary items can be any type
+thisdict = {"brand":"ford", "year":2020, "electric":False, "color":["red",1920,]}
+type(thisdict)
+
+# store marks
+marks = {1:77, 2:76, 5:62, 4:78, 3:65}
+marks[3]
+print("Marks of roll number 4 is:", marks[4])
+
+marks = {"DHA990": 75, "BAR009": 72, "KHU221": 77}
+marks["BAR009"]
+
+# We can create empty dictionary and can add value to it after create.
+# we can add string, number, tuple as key items to dictionary. But can't
+# add list, set as key item to dictionary
+dt = {}
+print(dt)
+type(dt)
+dt[1] = "one"
+print(dt)
+dt[2] = "two"
+print(dt)
+dt["String"] = "Bangladesh"
+dt[(1,2,3)] = "tuple"
+dt[[1,2,3]] = "list" # We can't add list to key value in dictionary
+dt[{1,2,3}] = "set"
+
+
+
 
 
 
