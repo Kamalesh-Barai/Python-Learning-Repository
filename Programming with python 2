@@ -950,6 +950,357 @@ dt[(1,2,3)] = "tuple"
 dt[[1,2,3]] = "list" # We can't add list to key value in dictionary
 dt[{1,2,3}] = "set"
 
+# This is how We can store bangla and english marks of different students.
+
+marks = {"DHA01": {"Bangla": 74, "English": 73},
+         "DHA02": {"Bangla": 70, "English": 75}}
+
+print(marks["DHA01"])
+marks["DHA01"]["Bangla"]
+
+marks["DHA03"] = {"Bangla": 68, "English": 72}
+print(marks)
+
+marks["DHA03"]
+marks["DHA03"]["English"]
+
+# If we want to work with the information about division of bangladesh like - 
+# How many District, Upazila, union have in a division, then the ideal
+# data structure is dictionary for that job in python.
+    
+    bd_division_info = {"Barishal": {"District": 6, "Upazila": 42, "Union": 333},
+                        "Chittagong": {"District": 11, "Upazila": 104, "Union": 949},
+                        "Dhaka": {"District": 13, "Upazila": 93, "Union": 1833},
+                        "Khulna": {"District": 10, "Upazila": 59, "Union": 270},
+                        "Mymensingh": {"District": 4, "Upazila": 35, "Union": 350},
+                        "Rajshahi": {"District": 8, "Upazila": 70, "Union": 558},
+                        "Rangpur": {"District": 8, "Upazila": 58, "Union": 536},
+                        "Sylhet": {"District": 4, "Upazila": 40, "Union": 334}}
+
+# If we want print only division name. Division names were written in key items.
+# So we can find all key items with .keys() method.
+
+bd_division_info.keys()
+divisions = bd_division_info.keys()
+type(divisions)
+print(divisions)
+
+# We can apply lopps on that keys
+for division in bd_division_info.keys():
+    print("Division: ", division)
+
+# If we want how many upazilas in each division.
+for division in bd_division_info.keys():
+    print("Division: ", division, "- Upazila: ",
+          bd_division_info[division]["Upazila"])
+
+# If we apply loop direct on dictionary, we will get only key items.
+for item in bd_division_info:
+    print(item)
+
+# If we want to get key and value both items.
+for key in bd_division_info:
+    print(key)
+    print(bd_division_info[key])
+
+# items() method return the items of dictionary
+items = bd_division_info.items()
+print(items)
+
+for x, y in bd_division_info.items():
+    print(x)
+    print(y)
+
+total_districts = 0
+total_upazilas = 0
+total_union = 0
+
+for key in bd_division_info:
+    total_districts += bd_division_info[key]["District"]
+    total_upazilas += bd_division_info[key]["Upazila"]
+    total_union += bd_division_info[key]["Union"]
+print("Total Districts of Bangladesh: ", total_districts,
+      "\nTotal Upazilas of Bangladesh: ", total_upazilas,
+      "\nTotal Unions of Bangladesh: ", total_union)
+
+# Random number - There is a module for produce random number called random.
+# .random() method produce randomly any number between 0 to 1 
+# .randint(a, b) method produce random number from a to b.
+
+import random
+random.random()
+random.randint(1, 10)
+
+# From turtle module there is an method named .position(), which is used to
+# know the present position of turtle.
+
+import turtle
+turtle.position()
+turtle.forward(100)
+turtle.position()
+turtle.left(90)
+turtle.position()
+turtle.forward(50)
+turtle.position()
+turtle.backward(200)
+turtle.position()
+turtle.exitonclick()
+
+# If we want we can set the position of turtle by .setposition().
+# Now we will send turtle on a random position and draw a dot.
+
+import turtle
+import random
+
+for i in range(20):
+    x = random.randint(-200, 200)
+    y = random.randint(-200, 200)
+    turtle.setposition(x, y)
+    turtle.dot()
+turtle.done()
+
+turtle.setposition(-10,100)   # individually examine
+turtle.done()
+
+# We can hide line on that program
+
+import turtle
+import random
+
+turtle.speed(0)
+turtle.penup()
+for i in range(200):
+    x = random.randint(-200, 200)
+    y = random.randint(-200, 200)
+    turtle.setposition(x, y)
+    turtle.dot()
+turtle.done()
+
+# Now we will apply color on dot and increase the size of dot
+
+import turtle
+import random
+
+turtle.speed(0)
+turtle.penup()
+
+# list of colors
+colors = ["red", "green", "blue", "yellow", "orange", "black", "purple"]
+for i in range(50):
+    x = random.randint(-100, 100)
+    y = random.randint(-100, 100)
+    
+    # set a random position
+    turtle.setposition(x, y)
+    # set a random color
+    i = random.randint(0, len(colors)-1)
+    turtle.dot(10, colors[i])
+turtle.done()
+
+turtle.dot(9)          # increase the size of dot
+turtle.exitonclick()
+turtle.dot("red")      # change the color of dot
+turtle.exitonclick()
+turtle.dot(9, "red")   # change color and increase the size of dot
+turtle.exitonclick()
+
+# Search a random number
+
+import random
+
+number = random.randint(1, 1000)
+attempts = 0
+low = 1
+high = 1000
+while True:
+    print("Guess the number (between 1 and 1000): ")
+    input_number = (low + high) // 2 # only integer division
+    print("My guess is: ", input_number)
+    attempts += 1
+    
+    if input_number == number:
+        print("yes, your guess is correct!")
+        break
+    if input_number > number:
+        print("Incorrect! Please try to guess a smaller number.")
+        high = input_number - 1
+    else:
+        print("Incorrect! Please try to guess a larger number.")
+        low = input_number + 1
+print("You tried", attempts, "times to find the correct number.")
+
+# prime number - A whole number greater than 1 that can not be made by
+# multiplying other whole numbers. It is divisible by only 1 and itself.
+
+def is_prime1(n):
+    if n < 2:
+        return False
+    prime = True
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, "is divisible by", x)
+            prime = False
+    return prime
+
+while True:
+    number = int(input("Please enter a number (enter 0 to exit): "))
+    if number == 0:
+        break
+    prime = is_prime1(number)
+    if prime is True:
+        print(number, "is a prime number.")
+    else:
+        print(number, "is not a prime number.")
+
+
+def is_prime2(n): # Efficient way
+    if n < 2:
+        return False
+    prime = True
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, "is divisible by", x)
+            prime = False
+            return prime
+    return prime
+        
+while True:
+    number = int(input("Please enter a number (enter 0 to exit): "))
+    if number == 0:
+        break
+    prime = is_prime2(number)
+    if prime is True:
+        print(number, "is a prime number.")
+    else:
+        print(number, "is not a prime number.")
+        
+def is_prime3(n=1013):    # More efficient way
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        print(n, "is divisible by 2.")
+        return False
+    if n < 2:
+        return False
+    prime = True
+    for x in range(3, n, 2):
+        if n % x == 0:
+            print(n, "is divisible by", x)
+            prime = False
+            return prime
+    return prime
+
+while True:
+    number = int(input("Please enter a number (enter 0 to exit): "))
+    if number == 0:
+        break
+    prime = is_prime3(number)
+    if prime is True:
+        print(number, "is a prime number.")
+    else:
+        print(number, "is not a prime number.")
+
+def is_prime4(n=1013):    # Super efficient way
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    prime = True
+    m = n // 2 + 1
+    for i in range(3, m, 2):
+        if n % i == 0:
+            prime = False
+            return prime
+    return prime
+
+import math
+def is_prime5(n=1013):     # super duper efficient way
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    m = int(math.sqrt(n)) + 1
+    for i in range(3, m, 2):
+        if n % i == 0:
+            return False
+    return True
+
+is_prime5(25)
+
+# Checking the performance
+import timeit
+t1 = timeit.timeit(is_prime3)
+t2 = timeit.timeit(is_prime4)
+t3 = timeit.timeit(is_prime5)
+print(t2, t3, t2/t3)
+
+# Take two input numbers n1 and n2 where n1 is lower than n2. Now print the
+# numbers between n1 and n2 which are prime.
+
+def is_prime5(n):     # super duper efficient way
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    import math
+    m = int(math.sqrt(n)) + 1
+    for i in range(3, m, 2):
+        if n % i == 0:
+            return False
+    return True
+
+n1 = int(input("Please enter a number: "))
+n2 = int(input("Please enter another greater number: "))
+for i in range(n1, n2+1):
+    prime = is_prime5(i)
+    if prime is True:
+        print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
